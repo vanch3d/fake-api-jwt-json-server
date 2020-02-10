@@ -2,7 +2,30 @@
 
 A Fake REST API using json-server with JWT authentication. 
 
-Implemented End-points: login,register
+- Implemented End-points: login,register
+
+- Changing the content of the payload to match the following pattern: 
+
+```json
+{
+  "iat": 1581308591,
+  "exp": 1581308591,
+  "jti": "e82f4dd9-7bad-4d5b-94b6-2fd8acea5da0",
+  "aud": [
+    "my.audience.id"
+  ],
+  "user_name": "my.user.name",
+  "scope": [
+    "my.scope.one",
+    "my.scope.two"
+  ],
+  "authorities": [
+    "my.first.user.type",
+    "my.second.user.type"
+  ],
+  "client_id": "my.client.id"
+}
+```
 
 ## Install
 
