@@ -1,0 +1,49 @@
+{
+  "events": [
+    {
+      "id": "e1",
+      "name": "Client meeting",
+      "resourceId": "r1",
+      "startDate": "2020-02-01",
+      "endDate": "2020-02-02",
+      "iconCls": "b-fa b-fa-calendar"
+    }
+  ],
+  "resources": [
+    {
+      "id": "r1",
+      "name": "Player 1",
+      "category": "Group 0",
+      "type": "TYPE1",
+      "image": "mike"
+    },
+    {
+      "id": "r2",
+      "name": "Player 2",
+      "category": "Group 0",
+      "type": "TYPE1",
+      "image": "amit"
+    },
+    {
+      "id": "r3",
+      "name": "Player 3",
+      "category": "Group 1",
+      "type": "TYPE1",
+      "image": "angelo"
+    },
+    {
+      "id": "r4",
+      "name": "Player 4",
+      "category": "Group 1",
+      "type": "TYPE2",
+      "image": "arcady"
+    },
+    {
+      "id": "r5",
+      "name": "Player 5",
+      "category": "Group 2",
+      "type": "TYPE2",
+      "image": "arnold"
+    }
+  ]
+}
