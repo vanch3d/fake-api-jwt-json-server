@@ -1,4 +1,22 @@
 {
+  "locations": [
+    {
+      "id": 0,
+      "name": "My primary location",
+      "time_pattern": {
+        "start": "T09:00:00",
+        "end": "T17:00:00"
+      }
+    },
+    {
+      "id": 1,
+      "name": "My secondary location",
+      "time_pattern": {
+        "start": "T09:00:00",
+        "end": "T17:00:00"
+      }
+    }
+  ],
   "events": [
     {
       "id": "e1",
