@@ -21,7 +21,7 @@ const PORT = Number(process.env.SERVICE_PORT);
 
 const server = jsonServer.create();
 const router = jsonServer.router('./db_players.json');
-const userdb = JSON.parse(fs.readFileSync('./users.json', 'UTF-8'));
+const userDB = JSON.parse(fs.readFileSync('./db_users.json', 'UTF-8'));
 
 server.use(bodyParser.urlencoded({extended: true}));
 server.use(bodyParser.json());
@@ -43,10 +43,10 @@ function verifyToken(token) {
 
 // Check if the user exists in database
 function isAuthenticated({email, password}) {
-  return userdb.users.findIndex(user => user.email === email && user.password === password) !== -1
+  return userDB.users.findIndex(user => user.email === email && user.password === password) !== -1
 }
 
-// Login to one of the users from ./users.json
+// Login to one of the users from ./db_users.json
 server.post(JWT_TOKEN_URL, (req, res) => {
   const {username: email, password} = req.body;
 
@@ -92,7 +92,9 @@ server.use(JWT_MIDDLEWARE_URL, (req, res, next) => {
 // Add this before server.use(router)
 server.use(jsonServer.rewriter({
   '/api/v1/*': '/$1',
-  '/locations/:id/players': `/resources`
+  '/locations/:id': `/locations/0`,
+  '/locations/:id/info': `/locations/0`,
+  '/locations/:id/players': `/resources`,
 }));
 
 server.use(router);
